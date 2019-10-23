@@ -10,6 +10,8 @@ export const Labels = {
     Login: 'Entrar',
     Logout: 'Sair',
     Home: 'Home',
+    Email: 'E-mail',
+    Password: 'Senha',
     AddGraph: 'Adicionar gráfico',
     RemoveGraph: 'Remover gráfico',
     Sidebar: {

@@ -10,7 +10,6 @@
     justify-content: center;
     border: 1px solid $primary;
     border-radius: inherit;
-    user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -19,11 +18,11 @@
 }
 
 .layout {
-    background: lightblue;
+    background: rgb(66, 79, 83);
     border: 1rem;
     box-shadow: 1px 0px 7px $primary;
     min-height: 368px;
-    max-height: 500px;
+    //max-height: 500px;
 }
 
 .layout-item {
@@ -32,6 +31,18 @@
     }
     p {
         @include component-layout;
+    }
+    iframe {
+        width: 90%;
+        height: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary;
+        border-radius: inherit;
+        z-index: -1;
     }
 }
 

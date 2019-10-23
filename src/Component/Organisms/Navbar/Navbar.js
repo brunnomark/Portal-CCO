@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         background: Styles.primary,
-        boxShadow: '1px 0px 7px rgba(0, 0, 0, 1.5)'
+        boxShadow: '1px 0px 7px ' + Styles.primary
     },
     appBarShift: {
         width: `calc(100% - ${DrawerWidth}px)`,
@@ -72,7 +72,7 @@ const useStyles = makeStyles(theme => ({
       justifyContent: 'center',
     },
     inputRoot: {
-      color: 'inherit',
+      color: 'rgba(53, 51, 51, 0.5)',
     },
     inputInput: {
       padding: theme.spacing(1, 1, 1, 7),

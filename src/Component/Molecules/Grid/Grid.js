@@ -10,7 +10,7 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 const styles = Object.assign({
   display: 'flex',
   alignItems: 'center', 
-  background: 'silver',
+  background: 'rgba(53, 51, 51, 0.5)',
   border: '1px solid black',
   borderRadius: '4px',
   transform: 'translate(50px, 50px)'
@@ -26,15 +26,21 @@ const IconStyles = Object.assign({
   padding: 0
 });
 
-class Grid extends React.Component {
+class Grid extends React.PureComponent {
   render() {  
     const items = this.props.Components.map((component, index) => {        
       return (
-          <div style={styles} className="layout-item" key={index}>
-            <IconButton style={IconStyles} aria-label="delete" onClick={() => this.props.closeComponent(index)}>
+          <div 
+            key={index} 
+            style={styles} 
+            className="layout-item" 
+            data-grid={component.dataGrid}>
+            {/* data-grid={{x: 0, y: 0, w: 5, h: 3, minW: 3, maxW: 12, minH: 3, maxH: 6}}>*/}
+            <IconButton style={IconStyles} aria-label="delete" onClick={() => this.props.closeComponent(component.key)}>
               <CloseIcon style={SmallCloseButton} />
             </IconButton>
-            {component}
+            {component.data}
+            {/* {component} */}
           </div>);
     })
 
@@ -46,7 +52,7 @@ class Grid extends React.Component {
           className="layout" //layouts={layouts}
           rowHeight={60}
           breakpoints={{lg: 900, md: 1200, sm: 768, xs: 480, xxs: 10}}
-          cols={{lg: 12, md: 20, sm: 25, xs: 25, xxs: 1}}>
+          cols={{lg: 4, md: 20, sm: 25, xs: 25, xxs: 1}}>
           {items}
         </ResponsiveGridLayout>
     )

@@ -11,7 +11,6 @@ const TitleSection = (props) => (
         <IconButton
             edge="start"
             className={clsx(props.classes.menuButton, props.isOpen && props.classes.hide)}
-            color="inherit"
             aria-label="open drawer"
             onClick={props.onClickHandler}>
             <MenuIcon />

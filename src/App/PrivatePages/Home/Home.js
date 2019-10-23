@@ -54,7 +54,7 @@ const Home = (props) => {
     setComponent(newComponents);
   }
 
-  const removeComponentHandler = (component) => {
+  const removeComponentHandler = () => {
     const newComponents = [
       ...components
     ];
@@ -62,11 +62,13 @@ const Home = (props) => {
     setComponent(newComponents);
   }
 
-  const closeComponentHandler = (index) => {
+  const closeComponentHandler = (key) => {
     const newComponents = [
       ...components
-    ];
-    newComponents.splice(index, 1);
+    ]
+    .filter(item => {
+      return item.key !== key;
+    });
     setComponent(newComponents);
   }
 
@@ -80,7 +82,7 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <main className={clsx(classes.content, { [classes.contentShift]: props.open, })}>
+      <main className={clsx(classes.content, { [classes.contentShift]: props.open })}>
         <h2>{Labels.Home}</h2>
         <GridBuilder
           addComponent={addComponentHandler}

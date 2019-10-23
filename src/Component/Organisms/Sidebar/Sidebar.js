@@ -13,17 +13,18 @@ const useStyles = makeStyles(theme => ({
   },  
   drawer: {
     width: DrawerWidth,
-    flexShrink: 0,
+    flexShrink: 0    
   },
   drawerPaper: {
     width: DrawerWidth,
+    background: 'rgb(0, 24, 35)'
   },
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   }
 }));
 

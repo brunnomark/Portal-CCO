@@ -16,7 +16,10 @@ const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 200
+  },
+  multilineColor:{
+    color: 'white'
   },
   dense: {
     marginTop: 19,
@@ -39,7 +42,7 @@ function Login({ loadAuth }) {
   return (
     <div className="login">
       <AuthForm 
-        styleClass={classes.textField} 
+        styleClass={classes.styleClass} 
         valueEmail={email} 
         valuePassword={password} 
         emailChangeHandler={(event) => setEmail(event.target.value)}
