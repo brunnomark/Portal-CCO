@@ -1,4 +1,5 @@
 {
+  "homepage": "https://brunnomark.github.io/Portal-CCO",
   "name": "portal-cco",
   "version": "0.1.0",
   "private": false,
@@ -9,7 +10,9 @@
     "build:dev": "env-cmd -f .env.development npm run build",
     "build:stg": "env-cmd -f .env.staging npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "snapshotSerializers": [
