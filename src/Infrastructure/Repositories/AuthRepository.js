@@ -1,4 +1,4 @@
-import { API_URL } from 'Common/Helpers/ApiHelper';
+import { API_URL } from '../../Common/Helpers/ApiHelper';
 
 class AuthRepository {
   constructor({ routePrefix = API_URL, routeVersion = 'v1' } = {}) {

@@ -3,24 +3,36 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
-import { DrawerWidth } from '../../../Common/Helpers/StylesHelper';
+import { DrawerWidth, DrawerBackground } from '../../../Common/Helpers/StylesHelper';
 import SidebarList from '../../Molecules/Sidebar/SidebarList/SidebarList';
 import SidebarButton from '../../Molecules/Sidebar/SidebarButton/SidebarButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
+    display: 'flex'    
   },  
   drawer: {
     width: DrawerWidth,
-    flexShrink: 0    
+    flexShrink: 0
   },
   drawerPaper: {
     width: DrawerWidth,
-    background: 'rgb(0, 24, 35)'
+    background: DrawerBackground,
+    overflow: 'hidden',
+    height: '100%',
+    '&:hover': {
+      overflowY: 'auto',
+    },
+    '&::-webkit-scrollbar': {
+      display: 'none',
+    },
   },
   drawerHeader: {
     display: 'flex',
+    position: 'fixed',
+    width: DrawerWidth,
+    background: DrawerBackground,
+    zIndex: 1000,
     alignItems: 'center',
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
@@ -45,7 +57,7 @@ const Sidebar = (props) => {
         <SidebarButton
           class={classes.drawerHeader} 
           iconClick={props.handleDrawerClose} />
-        <Divider />
+        <Divider style={{marginTop: '56px'}}/>
         <SidebarList />
         <Divider />
       </Drawer>
@@ -53,4 +65,4 @@ const Sidebar = (props) => {
   );
 }
 
-export default Sidebar;
+export default React.memo(Sidebar);

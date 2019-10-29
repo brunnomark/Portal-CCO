@@ -104,30 +104,30 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Navbar = (props) => {
-  const classes = useStyles();  
+  const classes = useStyles();
   const [badgeNotificationCount, setbadgeNotificationCount] = React.useState(0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(props.open);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleNotificationClose = () => {
-    setbadgeNotificationCount(0);
-    handleMobileNotificationClose();
-    // código adicional
-  };
+  // const handleNotificationClose = () => {
+  //   setbadgeNotificationCount(0);
+  //   handleMobileNotificationClose();
+  //   // código adicional
+  // };
 
   const handleNotificationOpen = event => {
     setbadgeNotificationCount(event.target.value);
     // abrir dropdown Desktop
   };
 
-  const handleMobileNotificationClose = () => {
-    setbadgeNotificationCount(0);
-    handleNotificationClose();
-  };
+  // const handleMobileNotificationClose = () => {
+  //   setbadgeNotificationCount(0);
+  //   handleNotificationClose();
+  // };
 
   const handleMobileNotificationOpen = event => {
     setbadgeNotificationCount(event.target.value);
@@ -239,4 +239,4 @@ const Navbar = (props) => {
   );
 }
 
-export default Navbar;
+export default React.memo(Navbar);

@@ -25,8 +25,10 @@ $lightSlateBlue: #818ffc;
 $royalBlue: #5063ee;
 $lightBlue: #e2f2fa;
 $vermelhoClaro: #fabbaf;
+$activeLink: #fa923f;
 
 // UI Grays
+$gray: gray;
 $lightGray: #f1f3f4;
 $middleGray: #637381;
 $darkGray: #212b36;
@@ -37,6 +39,7 @@ $background: #f8f8f8;
 // UI Elements
 $shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
 $link: #007ace;
+$textDecorationLink: none;
 
 //Media Queries
 $phone: 320px;
@@ -52,8 +55,17 @@ $acucar: #eb6188;
 $milho: #ffbb00;
 $soja: #2fcc71;
 
+//Sidebar
+$paddingLeftSidebarList: 16px;
+$fontSizeSidebarList: 0.95em;
+
 :export {
     primary: $primary;    
     secondary: $secondary;
     white: $white;
+    gray: $gray;
+    paddingLeftSidebarList: $paddingLeftSidebarList;
+    fontSizeSidebarList: $fontSizeSidebarList;
+    activeLink: $activeLink;
+    textDecorationLink: $textDecorationLink;
 }

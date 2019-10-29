@@ -79,6 +79,10 @@ Para facilitar o build em diversos ambientes foi configurado neste boilerplate c
     -   Arquivo de variaveis de ambiente: `.env.staging`
 
 
+### Testing
+
+- Testing com Jest + Enzyme. Referências: https://circleci.com/blog/continuously-testing-react-applications-with-jest-and-enzyme/?gclid=Cj0KCQjwl8XtBRDAARIsAKfwtxAUWr9Qpjzvgcl_qNCTRumbpcuNRxjExdQhxLWbaRvELUns-VPmC54aAn5tEALw_wcB
+
 Para realização da build foi utilizado as variaveis ambiente configuradas no proprio **RCA** https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables#docsNav.
 
 E **ENV-CMD** https://github.com/toddbluhm/env-cmd

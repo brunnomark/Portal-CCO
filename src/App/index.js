@@ -11,6 +11,7 @@ import Login from './PublicPages/Login';
 
 /* Private routes */
 import Home from './PrivatePages/Home';
+import LaneProgramming from './PrivatePages/LaneProgramming';
 
 import './App.scss';
 
@@ -23,7 +24,21 @@ class App extends Component {
           component: Home,
           id: 'home',
           name: 'Home',
-          path: '/home',
+          path: '/Home',
+          isMenu: true          
+        },
+        {
+          component: Home,
+          id: 'indicadores',
+          name: 'Indicadores',
+          path: '/Indicadores',
+          isMenu: true          
+        },
+        {
+          component: LaneProgramming,
+          id: 'programacaoFaixas',
+          name: 'ProgramacaoFaixas',
+          path: '/ProgramacaoFaixas',
           isMenu: true          
         },
       ],
@@ -49,11 +64,10 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            {/*<Navbar />*/}
             {/* Public routes */}
             <PublicPages path="/login" component={Login} />
             {/* Private routes */}
-            <PrivatePages path="/" isMenuOpen={this.state.isMenuOpen} menuHandler={this.menuOpenHandler} exact component={Home} menu={menu} />
+            <PrivatePages path="/" isMenuOpen={this.state.isMenuOpen} menuHandler={this.menuOpenHandler} exact component={Home} menu={menu} />            
             {privateItems.map(item => (
               <PrivatePages
                 key={`private-pages-${item.id}`}

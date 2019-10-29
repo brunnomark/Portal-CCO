@@ -18,4 +18,4 @@ const SidebarButton = (props) => {
         </div>);
 };
 
-export default SidebarButton;
+export default React.memo(SidebarButton);

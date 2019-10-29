@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-function PublicPages({ component: Component, logged, ...rest }) {
+const PublicPages = ({ component: Component, logged, ...rest }) => {
   return (
     <Route
       {...rest}
@@ -10,7 +10,7 @@ function PublicPages({ component: Component, logged, ...rest }) {
         <Component {...props} />
       ) : (
         <Redirect
-          to={{ pathname: '/home', state: { from: props.location } }}
+          to={{ pathname: '/Home', state: { from: props.location } }}
         />
       ))
       }

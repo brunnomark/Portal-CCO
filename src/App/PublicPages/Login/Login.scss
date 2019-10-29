@@ -1,8 +1,28 @@
+@import "../../../Common/Styles/variables";
+
 .login {
-    margin: 150px 0 0 0;
-    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: -webkit-fill-available;
+
+    .box {
+        width: 35%;
+        margin: auto;
+        padding: 25px;
+        border-radius: 4px;
+        box-shadow: 1px 0px 7px $softWhite;
+        background: rgba(0, 0, 0, 0.54);
+    }
+    .form {
+        width: 100%;
+        margin: 10px;
+    }
+    .button{
+        width: 75px;
+    }
 }
 
 body{
-    background: rgb(10, 23, 27);
+    background: url('../../../Common//Images/backgroundLogin.jpg') center center / cover no-repeat;
 }

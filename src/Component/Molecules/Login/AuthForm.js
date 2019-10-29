@@ -24,7 +24,7 @@ const CssTextField = withStyles({
         borderColor: 'white',
       },
     },
-  },
+  }
 })(TextField);
 
 const AuthForm = (props) => {
@@ -34,23 +34,25 @@ const AuthForm = (props) => {
           id="email"
           type="email"
           label={Labels.Email}
-          className={props.textField}
+          className={props.textFieldClass}
           InputLabelProps={{ style: { color: "white" } }}
           InputProps={{ style: { color: "white" } }}
           value={props.valueEmail}
           onChange={props.emailChangeHandler}
           margin={MarginNormal}
+          autoComplete="off"
         />
         <CssTextField
           id="password"
           type="password"
           label={Labels.Password}
-          className={props.textField}
+          className={props.textFieldClass}
           InputLabelProps={{ style: { color: "white" } }}
           InputProps={{ style: { color: "white" } }}
           value={props.valuePassword}
           onChange={props.passwordChangeHandler}
           margin={MarginNormal}
+          autoComplete="off"
         />
       </form>);
 };

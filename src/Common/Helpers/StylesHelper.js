@@ -1,4 +1,5 @@
 export const DrawerWidth = 240;
+export const DrawerBackground = 'rgb(0, 24, 35)';
 export const MarginNormal = 'normal';
 export const SmallCloseButton = Object.assign(
 { 

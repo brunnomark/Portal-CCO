@@ -1,6 +1,6 @@
-import AuthService from 'Infrastructure/Services/AuthService';
-import { Token } from 'Common/Helpers/AuthHelper';
-import { history } from 'Config/History';
+import AuthService from '../../Infrastructure/Services/AuthService';
+import { Token } from '../../Common/Helpers/AuthHelper';
+import { history } from '../../Config/History';
 
 export const STORE_NAME = 'auth';
 

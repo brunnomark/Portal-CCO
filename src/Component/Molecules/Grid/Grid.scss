@@ -20,18 +20,15 @@
 .layout {
     background: rgb(66, 79, 83);
     border: 1rem;
-    box-shadow: 1px 0px 7px $primary;
+    box-shadow: 1px 0px 7px $softWhite;
     min-height: 368px;
     //max-height: 500px;
 }
 
 .layout-item {
-    img {
-        @include component-layout;
-    }
-    p {
-        @include component-layout;
-    }
+    // img, p {
+    //     @include component-layout;
+    // }
     iframe {
         width: 90%;
         height: 90%;

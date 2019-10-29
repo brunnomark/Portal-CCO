@@ -1,10 +1,11 @@
-import React, { useState  } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AuthForm from '../../../Component/Molecules/Login/AuthForm'
 import { Labels } from '../../../Common/Helpers/LabelHelper';
+import Box from '@material-ui/core/Box';
 
 import './Login.scss';
 
@@ -12,11 +13,6 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200
   },
   multilineColor:{
     color: 'white'
@@ -29,11 +25,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Login({ loadAuth }) {
+const Login = ({ loadAuth }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const classes = useStyles();
+
+  const emailChangeHandler = (event) => {
+    setEmail(event.target.value);
+  }
 
   const submit = async () => {
     await loadAuth({ email, password });
@@ -41,15 +41,18 @@ function Login({ loadAuth }) {
 
   return (
     <div className="login">
-      <AuthForm 
-        styleClass={classes.styleClass} 
-        valueEmail={email} 
-        valuePassword={password} 
-        emailChangeHandler={(event) => setEmail(event.target.value)}
-        passwordChangeHandler={(event) => setPassword(event.target.value)}/>
-      <Button variant="contained" color="primary" onClick={submit}>
-        {Labels.Login}
-      </Button>
+      <Box className="box">
+        <AuthForm
+          textFieldClass="form"
+          styleClass={classes.styleClass} 
+          valueEmail={email} 
+          valuePassword={password} 
+          emailChangeHandler={(event) => emailChangeHandler(event)}
+          passwordChangeHandler={(event) => setPassword(event.target.value)}/>
+        <Button className="button" variant="contained" color="primary" onClick={submit}>
+          {Labels.Login}
+        </Button>
+      </Box>
     </div>
   );
 }
@@ -59,4 +62,4 @@ Login.propTypes = {
   loadAuth: PropTypes.func.isRequired,
 };
 
-export default Login;
+export default React.memo(Login);
